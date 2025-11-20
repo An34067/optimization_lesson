@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Издательства и их книги</h3>
+    <table border="1">
+		{% for Publication_house in books %}
+			<tr>
+				<td>{{ Publication_house.name }}</td>
+				<td>{{ Publication_house.book_count }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
