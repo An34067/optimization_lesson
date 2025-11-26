@@ -1,0 +1,11 @@
+{% block main content %}
+<form action="/accept-handle" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name">
+    <label for="price">Price</label>
+    <input type="number" name="price">
+    <label for=quantity>Quantity</label>
+    <input type="number" name="quantity">
+    <input type="submit" value="Submit">
+</form>
+{% endblock main content %}
