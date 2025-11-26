@@ -20,5 +20,5 @@ from hello import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('view', views.get_all_items)
+    path('', views.get_all_items)
 ]

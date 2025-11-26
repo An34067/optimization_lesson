@@ -1,4 +1,5 @@
 from django.shortcuts import render,get_object_or_404
+from django.http import HttpResponse
 from .models import *
 # Create your views here.
 
@@ -22,9 +23,11 @@ def get_all_items(request):
         name='Рога и копыта'
     )
     item = Item(
-        name = 'проверочный товар',
-        price=50.000,
-        quantity=1000,
+        name = request.GET.get('name'),
+        price= request.GET.get('price'),
+        quantity= request.GET.get('quantity'),
         manufacturer=manufacturer
     )
     item.save()
+
+    return HttpResponse("Товар создан", status=201)
