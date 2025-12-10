@@ -45,10 +45,10 @@ class Manufacturer(models.Model):
         return f"{self.name}"
 
 class Item(models.Model):
-    name = models.CharField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    name = models.CharField(max_length=60, null=True, blank=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return f'{self.name} ({self.price})'
